@@ -1,65 +1,121 @@
-import Image from "next/image";
-
+import AddToCardComponent from "@/components/AddToCardComponent";
+import BlogComponents from "@/components/BlogComponents";
+import Section01 from "@/components/Section01";
+import { WordRotate } from "@/components/ui/word-rotate";
+import { cardType } from "@/lib/blog/cardType";
+import Card from "@/components/Card";
+import { section } from "motion/react-client";
 export default function Home() {
+  const datas: cardType[] = [
+    {
+      title: "Monstera Plant",
+      description: "Beautiful indoor plant with large green leaves.",
+      image: "https://images.unsplash.com/photo-1545241047-6083a3684587?w=500",
+      price: 18.99,
+    },
+
+    {
+      title: "Peace Lily",
+      description: "Elegant flowering plant that improves air quality.",
+      image:
+        "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=500",
+      price: 22,
+    },
+
+    {
+      title: "Aloe Vera",
+      description: "Medicinal succulent plant easy to care for.",
+      image:
+        "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=500",
+      price: 9.99,
+    },
+
+    {
+      title: "Fiddle Leaf Fig",
+      description: "Modern decorative plant for home interiors.",
+      image:
+        "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=500",
+      price: 35.99,
+    },
+
+    {
+      title: "Cactus Collection",
+      description: "Small desert plants ideal for desks and shelves.",
+      image:
+        "https://images.unsplash.com/photo-1459156212016-c812468e2115?w=500",
+      price: 14.75,
+    },
+
+    {
+      title: "Orchid Flower",
+      description: "Elegant colorful flowers for decoration.",
+      image:
+        "https://images.unsplash.com/photo-1512428813834-c702c7702b78?w=500",
+      price: 19.99,
+    },
+
+    {
+      title: "Bonsai Tree",
+      description: "Mini decorative tree with premium design.",
+      image:
+        "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=500",
+      price: 45.99,
+    },
+    {
+      title: "Monstera Plant",
+      description: "Beautiful indoor plant with large green leaves.",
+      image: "https://images.unsplash.com/photo-1545241047-6083a3684587?w=500",
+      price: 18.99,
+    },
+
+    {
+      title: "Peace Lily",
+      description: "Elegant flowering plant that improves air quality.",
+      image:
+        "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=500",
+      price: 22.0,
+    },
+
+    {
+      title: "Aloe Vera",
+      description: "Medicinal succulent plant easy to care for.",
+      image:
+        "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=500",
+      price: 9.99,
+    },
+
+    {
+      title: "Fiddle Leaf Fig",
+      description: "Modern decorative plant for home interiors.",
+      image:
+        "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=500",
+      price: 35.99,
+    },
+
+    {
+      title: "Cactus Collection",
+      description: "Small desert plants ideal for desks and shelves.",
+      image:
+        "https://images.unsplash.com/photo-1459156212016-c812468e2115?w=500",
+      price: 14.75,
+    },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <section>
+      <Section01/>
+      <AddToCardComponent/>
+      <div className="grid  my-8 grid-cols-4  max-w-7xl gap-4 mx-auto items-center justify-center  font-sans dark:bg-black">
+        {datas.map((item, index) => (
+          <Card
+            key={index}
+            title={item.title}
+            description={item.description}
+            image={item.image}
+            price={item.price}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
