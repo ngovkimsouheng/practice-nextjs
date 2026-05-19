@@ -41,7 +41,7 @@ export default function page() {
     getAllBlog();
   }, []);
   return (
-    <div className=" mt-8 grid grid-cols-4 mx-auto container max-w-7xl gap-8">
+    <div className=" my-4 grid grid-cols-4 mx-auto container max-w-7xl gap-4">
       {/* <div className="container mx-auto grid grid-cols-3 gap-4">
         {blogs?.map(({ profile, name, position }, _) => (
           <BlogComponents
