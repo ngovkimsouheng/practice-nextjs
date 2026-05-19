@@ -1,10 +1,13 @@
 import React from "react";
-
+import Link from "next/link";
 export default function NavBar() {
   return (
-    <div className="navbar mx-auto  bg-base-100 shadow-sm">
-      <div className="flex-1">
-        <a className="btn btn-ghost text-xl">Plants</a>
+    <div className=" flex justify-around items-center py-2  mx-auto  bg-base-100 shadow-sm">
+    
+        <Link href={"/"} className="btn btn-ghost text-xl  text-green-500">Plants</Link>
+   
+      <div>
+        <Link className="text-xl font-medium" href="/blog"> Blog</Link>
       </div>
       <div className="flex gap-2">
         <input

@@ -103,8 +103,8 @@ export default function Home() {
 
   return (
     <section>
-      <Section01/>
-      <AddToCardComponent/>
+      <Section01 />
+      <AddToCardComponent />
       <div className="grid  my-8 grid-cols-4  max-w-7xl gap-4 mx-auto items-center justify-center  font-sans dark:bg-black">
         {datas.map((item, index) => (
           <Card
@@ -118,4 +118,4 @@ export default function Home() {
       </div>
     </section>
   );
-}
+} 
