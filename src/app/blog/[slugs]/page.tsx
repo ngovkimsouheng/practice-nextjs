@@ -27,20 +27,13 @@ export default function BlogSlug() {
   useEffect(() => {
     const fetchPost = async () => {
       const slug = Array.isArray(slugs) ? slugs[0] : slugs;
-
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}/posts/${slug}`,
       );
-
       const data = await res.json();
-
-      // convert object into array for map()
       setPost([data]);
     };
-
-    if (slugs) {
       fetchPost();
-    }
   }, [slugs]);
 
   return (

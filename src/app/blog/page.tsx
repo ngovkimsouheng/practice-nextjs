@@ -41,7 +41,7 @@ export default function page() {
     getAllBlog();
   }, []);
   return (
-    <div className=" mx-auto container max-w-7xl gap-8" >
+    <div className=" grid grid-cols-4 mx-auto container max-w-7xl gap-8">
       {/* <div className="container mx-auto grid grid-cols-3 gap-4">
         {blogs?.map(({ profile, name, position }, _) => (
           <BlogComponents
@@ -52,7 +52,7 @@ export default function page() {
           />
         ))}
       </div> */}
-      <Link href={`/blog/{id}`}></Link>
+     
       {blog?.map(({ id, title, body }) => (
         <BlogComponent key={id} title={title} body={body} id={id} />
       ))}
